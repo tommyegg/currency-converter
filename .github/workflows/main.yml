@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  currency-convert-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare The Environment
+        run: cp .env.example .env
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: Generate Application Key
+        run: php artisan key:generate
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: vendor/bin/phpunit
