@@ -11,6 +11,6 @@ class CurrencyConverterRepository
      */
     public function getExchangeRates() : array
     {
-        return json_decode(Storage::get('exchange_rates.json'), true);
+        return json_decode(file_get_contents(base_path('exchange_rates.json')), true);
     }
 }
