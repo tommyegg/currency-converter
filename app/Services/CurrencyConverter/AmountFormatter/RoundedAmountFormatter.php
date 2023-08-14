@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services\CurrencyConverter;
+namespace App\Services\CurrencyConverter\AmountFormatter;
 
+use App\Services\CurrencyConverter\AmountFormatter;
 use BCMathExtended\BC;
 
 class RoundedAmountFormatter implements AmountFormatter

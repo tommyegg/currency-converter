@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use App\Repositories\CurrencyConverterRepository;
+use App\Services\CurrencyConverter\AmountFormatter\FormattedAmountFormatter;
+use App\Services\CurrencyConverter\AmountFormatter\RoundedAmountFormatter;
 use App\Services\CurrencyConverter\CurrencyConverterService;
 use App\Services\CurrencyConverter\Exceptions\CurrencyConvertException;
-use App\Services\CurrencyConverter\FormattedAmountFormatter;
-use App\Services\CurrencyConverter\RoundedAmountFormatter;
 use Tests\TestCase;
 
 class CurrencyConverterServiceTest extends TestCase

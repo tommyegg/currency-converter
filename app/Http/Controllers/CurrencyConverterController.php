@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CurrencyConvertRequest;
+use App\Services\CurrencyConverter\AmountFormatter\FormattedAmountFormatter;
+use App\Services\CurrencyConverter\AmountFormatter\RoundedAmountFormatter;
 use App\Services\CurrencyConverter\CurrencyConverterService;
 use App\Services\CurrencyConverter\Exceptions\CurrencyConvertException;
-use App\Services\CurrencyConverter\FormattedAmountFormatter;
-use App\Services\CurrencyConverter\RoundedAmountFormatter;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 
 class CurrencyConverterController extends Controller
 {
