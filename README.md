@@ -14,6 +14,11 @@ composer install
 curl --request GET 'http://127.0.0.1/api/convert?amount=$100&source=TWD&target=JPY'
 ```
 
+單元測試
+```shell
+./vendor/bin/sail test
+```
+
 # API 說明文件
 
 ## 轉換 API
