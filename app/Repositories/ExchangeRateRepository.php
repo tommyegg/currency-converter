@@ -2,9 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Repositories\Interface\ExchangeRateInterface;
 use Illuminate\Support\Facades\Storage;
 
-class CurrencyConverterRepository
+class ExchangeRateRepository implements ExchangeRateInterface
 {
     /**
      * @return array

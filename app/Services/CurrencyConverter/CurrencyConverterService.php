@@ -2,7 +2,8 @@
 
 namespace App\Services\CurrencyConverter;
 
-use App\Repositories\CurrencyConverterRepository;
+use App\Repositories\ExchangeRateRepository;
+use App\Repositories\Interface\ExchangeRateInterface;
 use App\Services\CurrencyConverter\Exceptions\CurrencyConvertException;
 
 class CurrencyConverterService
@@ -13,9 +14,9 @@ class CurrencyConverterService
     protected array $formatterList;
 
     /**
-     * @param CurrencyConverterRepository $currencyConverterRepository
+     * @param ExchangeRateInterface $exchangeRateInterface
      */
-    public function __construct(protected CurrencyConverterRepository $currencyConverterRepository)
+    public function __construct(protected ExchangeRateInterface $exchangeRateInterface)
     {
     }
 
@@ -39,7 +40,7 @@ class CurrencyConverterService
      */
     private function convertCurrency(string|int $amount, string $sourceCurrency, string $targetCurrency): string
     {
-        $rateList = $this->currencyConverterRepository->getExchangeRates();
+        $rateList = $this->exchangeRateInterface->getExchangeRates();
 
         if (!isset($rateList['currencies'][$sourceCurrency])) {
             throw CurrencyConvertException::sourceCurrencyNotFound();

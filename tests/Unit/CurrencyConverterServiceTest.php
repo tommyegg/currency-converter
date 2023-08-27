@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Repositories\CurrencyConverterRepository;
+use App\Repositories\ExchangeRateRepository;
 use App\Services\CurrencyConverter\AmountFormatter\FormattedAmountFormatter;
 use App\Services\CurrencyConverter\AmountFormatter\RoundedAmountFormatter;
 use App\Services\CurrencyConverter\CurrencyConverterService;
@@ -16,7 +16,7 @@ class CurrencyConverterServiceTest extends TestCase
     {
         parent::setUp();
         // Mock the CurrencyConverterRepository
-        $currencyConverterRepository = $this->createMock(CurrencyConverterRepository::class);
+        $currencyConverterRepository = $this->createMock(ExchangeRateRepository::class);
         $currencyConverterRepository->method('getExchangeRates')->willReturn([
             'currencies' => [
                 'TWD' => [

@@ -170,6 +170,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //api 回傳格式
         App\Providers\ResponseMacroServiceProvider::class,
+        //Repository
+        \App\Providers\RepositoryServiceProvider::class
     ])->toArray(),
 
     /*
